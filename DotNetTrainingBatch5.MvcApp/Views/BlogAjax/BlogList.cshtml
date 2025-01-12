@@ -1,0 +1,81 @@
+﻿<a href="/BlogAjax/Create" class="btn btn-outline-success">Create New Blog</a>
+
+<table class="table table-responsive">
+	<thead>
+		<tr>
+			<th></th>
+			<th>No.</th>
+			<th>Blog Title</th>
+			<th>Blog Author</th>
+			<th>Blog Content</th>
+		</tr>
+	</thead>
+	<tbody id="tbDataTable">
+	</tbody>
+</table>
+
+@section scripts {
+	<script>
+		$(document).ready(function(){
+			loadData();
+		});
+
+		function loadData(){
+			$.ajax({
+				url: "/BlogAjax/List",
+				type: "GET",
+				success: function(response){
+					console.log({response});
+
+					$("#tbDataTable").empty();
+					for(let i = 0; i < response.length; i++){
+						let blog = response[i];
+						let tr = `<tr>
+							<td>
+								<a href="/BlogAjax/Edit/${blog.BlogId}" class="btn btn-warning">Edit</a>
+								<button type="button" data-id="${blog.BlogId}" class="btn btn-danger btn-delete">Delete</a>
+							</td>
+							<td>${i + 1}</td>
+							<td>${blog.BlogTitle}</td>
+							<td>${blog.BlogAuthor}</td>
+							<td>${blog.BlogContent}</td>
+						</tr>`;
+						$("#tbDataTable").append(tr);
+					}
+
+					bindDeleteButton();
+				},
+				error: function(error){
+					console.log(error);
+				}
+			});
+		}
+
+		function bindDeleteButton(){
+			$('.btn-delete').click(function(){
+				const id = $(this).data('id');
+
+				$.ajax({
+					url: "/BlogAjax/Delete",
+					type: "POST",
+					data: {
+						Id: id
+					},
+					success: function(response){
+						console.log({response});
+						if(!response.IsSuccess){
+							alert(response.Message);
+							return;
+						}
+
+						alert(response.Message);
+						location.href = "/BlogAjax";
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
+			})
+		}
+	</script>
+}

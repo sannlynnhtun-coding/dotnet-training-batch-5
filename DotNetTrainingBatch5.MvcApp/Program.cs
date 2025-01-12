@@ -12,7 +12,10 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 builder.Services.AddScoped<IBlogService, BlogService>();
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddJsonOptions(opt =>
+{
+    opt.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
 
 var app = builder.Build();
 
@@ -34,5 +37,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// https://localhost:3000/Home/Index?blogId=1
 
 app.Run();
