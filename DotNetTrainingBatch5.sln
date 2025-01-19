@@ -42,6 +42,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{19A6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch5.MvcApp", "DotNetTrainingBatch5.MvcApp\DotNetTrainingBatch5.MvcApp.csproj", "{BA7A31E1-D94F-4481-81C9-28487E9CF75D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch5.ChartWebApp", "DotNetTrainingBatch5.ChartWebApp\DotNetTrainingBatch5.ChartWebApp.csproj", "{BE5AAA72-685E-4C91-8D9D-A96526E0B0A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,10 @@ Global
 		{BA7A31E1-D94F-4481-81C9-28487E9CF75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA7A31E1-D94F-4481-81C9-28487E9CF75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA7A31E1-D94F-4481-81C9-28487E9CF75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE5AAA72-685E-4C91-8D9D-A96526E0B0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5AAA72-685E-4C91-8D9D-A96526E0B0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5AAA72-685E-4C91-8D9D-A96526E0B0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5AAA72-685E-4C91-8D9D-A96526E0B0A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
