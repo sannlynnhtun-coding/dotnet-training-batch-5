@@ -1,0 +1,27 @@
+﻿@model List<DotNetTrainingBatch5.Project1.MvcApp.Controllers.BlogModel>
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome</h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Content</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Title</td>
+				<td>@item.Author</td>
+			</tr>
+		}
+	</tbody>
+</table>
