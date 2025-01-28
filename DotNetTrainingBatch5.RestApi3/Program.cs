@@ -1,9 +1,13 @@
+using DotNetTrainingBatch5.Shared;
+using Microsoft.Extensions.DependencyInjection;
 using Refit;
 using RestSharp;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped(_ => new DapperService(builder.Configuration.GetConnectionString("DbConnection")!));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

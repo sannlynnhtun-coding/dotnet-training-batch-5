@@ -13,4 +13,8 @@
 		<PackageReference Include="RestSharp" Version="112.1.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\DotNetTrainingBatch5.Shared\DotNetTrainingBatch5.Shared.csproj" />
+	</ItemGroup>
+
 </Project>
